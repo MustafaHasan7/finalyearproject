@@ -3,19 +3,24 @@ const API_PORT = (typeof window !== "undefined" && window.FYP_API_PORT) || 9510;
 const API_BASE = `http://127.0.0.1:${API_PORT}`;
 
 const COLORS = {
-    accent: "#176d75",
-    signal: "#c5552e",
-    blue: "#5d8c9b",
-    sand: "#8c6f4d",
-    grid: "#dbe2e8",
-    mutedBar: "#dbe2e8",
+    ink: "#162029",
+    muted: "#64727d",
+    accent: "#126c76",
+    signal: "#c4512f",
+    blue: "#4f88a3",
+    olive: "#6d8452",
+    gold: "#b68a3a",
+    violet: "#725f9a",
+    grid: "#d9e1e8",
+    mutedBar: "#d8e1e7",
 };
 
+const CLUSTER_COLORS = [COLORS.accent, COLORS.signal, COLORS.blue, COLORS.olive, COLORS.gold, COLORS.violet];
 const PLOTLY_OPTIONS = { responsive: true, displayModeBar: false };
 const BASE_LAYOUT = {
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
-    font: { family: "Inter, Segoe UI, Roboto, Arial, sans-serif", color: "#172026" },
+    font: { family: "Inter, Segoe UI, Roboto, Arial, sans-serif", color: COLORS.ink },
 };
 
 let dashboardData = null;
@@ -40,8 +45,10 @@ async function initializeDashboard() {
 
         renderMeta();
         renderOverview();
+        renderClusterRibbon();
         renderValidationChart();
         renderClusterSizeChart();
+        renderActionSignatureChart();
         renderPrototypeList();
         renderActionCatalogue();
         populateFilters();
@@ -57,7 +64,7 @@ async function initializeDashboard() {
 }
 
 function renderMeta() {
-    document.getElementById("generatedAt").textContent = `Generated: ${dashboardData.project.generated_at}`;
+    document.getElementById("generatedAt").textContent = `Generated ${dashboardData.project.generated_at}`;
 }
 
 function renderOverview() {
@@ -69,6 +76,38 @@ function renderOverview() {
     document.getElementById("medianSequenceLength").textContent = Number(overview.median_sequence_length ?? 0).toFixed(1);
 }
 
+function renderClusterRibbon() {
+    const container = document.getElementById("clusterRibbon");
+    container.innerHTML = "";
+
+    for (const [index, profile] of (dashboardData.cluster_profiles || []).entries()) {
+        const prototype = cleanPrototype(profile.prototype_sequence);
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = "cluster-summary";
+        card.style.setProperty("--cluster-color", getClusterColor(index));
+        card.dataset.cluster = String(profile.cluster);
+        card.dataset.prototype = prototype.join(", ");
+        card.innerHTML = `
+            <span class="cluster-summary-id">Cluster ${escapeHtml(profile.cluster)}</span>
+            <strong>${formatNumber(profile.size)}</strong>
+            <span>${Number(profile.median_length ?? 0).toFixed(1)} median steps</span>
+            <small>${escapeHtml((profile.top_actions || []).slice(0, 3).join(" / "))}</small>
+        `;
+        container.appendChild(card);
+    }
+
+    container.addEventListener("click", (event) => {
+        const card = event.target.closest("[data-cluster]");
+        if (!card) return;
+        document.getElementById("clusterFilter").value = card.dataset.cluster;
+        applyFilters();
+        setManualSequence(card.dataset.prototype || "");
+        runManualSequenceAssignment();
+        document.querySelector(".manual-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+}
+
 function renderValidationChart() {
     const metrics = dashboardData.validation_metrics || [];
     Plotly.newPlot("validationChart", [
@@ -78,14 +117,14 @@ function renderValidationChart() {
             x: metrics.map((item) => item.clusters),
             y: metrics.map((item) => item.silhouette),
             line: { color: COLORS.accent, width: 3 },
-            marker: { color: COLORS.signal, size: 10 },
+            marker: { color: COLORS.signal, size: 10, line: { color: "#fff", width: 2 } },
             hovertemplate: "k=%{x}<br>Silhouette=%{y:.3f}<extra></extra>",
         },
     ], {
         ...BASE_LAYOUT,
-        margin: { t: 16, r: 18, b: 42, l: 48 },
-        xaxis: { title: "Clusters", dtick: 1, gridcolor: COLORS.grid },
-        yaxis: { title: "Silhouette", gridcolor: COLORS.grid },
+        margin: { t: 10, r: 18, b: 42, l: 50 },
+        xaxis: { title: "Clusters", dtick: 1, gridcolor: COLORS.grid, zeroline: false },
+        yaxis: { title: "Silhouette", gridcolor: COLORS.grid, zeroline: false },
     }, PLOTLY_OPTIONS);
 }
 
@@ -96,13 +135,48 @@ function renderClusterSizeChart() {
             type: "bar",
             x: profiles.map((item) => `Cluster ${item.cluster}`),
             y: profiles.map((item) => item.size),
-            marker: { color: [COLORS.accent, COLORS.signal, COLORS.blue, COLORS.sand] },
+            marker: { color: profiles.map((_, index) => getClusterColor(index)) },
             hovertemplate: "%{x}: %{y:,} sessions<extra></extra>",
         },
     ], {
         ...BASE_LAYOUT,
-        margin: { t: 16, r: 18, b: 42, l: 56 },
-        yaxis: { title: "Sessions", gridcolor: COLORS.grid },
+        margin: { t: 10, r: 18, b: 42, l: 58 },
+        yaxis: { title: "Sessions", gridcolor: COLORS.grid, zeroline: false },
+    }, PLOTLY_OPTIONS);
+}
+
+function renderActionSignatureChart() {
+    const rows = dashboardData.action_frequency || [];
+    const totals = new Map();
+    for (const row of rows) {
+        totals.set(row.action, (totals.get(row.action) || 0) + Number(row.count || 0));
+    }
+
+    const topActions = [...totals.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 8)
+        .map(([action]) => action);
+    const profiles = dashboardData.cluster_profiles || [];
+
+    const traces = profiles.map((profile, index) => ({
+        type: "bar",
+        name: `Cluster ${profile.cluster}`,
+        x: topActions,
+        y: topActions.map((action) => {
+            const match = rows.find((row) => String(row.cluster) === String(profile.cluster) && row.action === action);
+            return match ? match.count : 0;
+        }),
+        marker: { color: getClusterColor(index) },
+        hovertemplate: "%{x}<br>%{y:,} actions<extra></extra>",
+    }));
+
+    Plotly.newPlot("actionSignatureChart", traces, {
+        ...BASE_LAYOUT,
+        barmode: "group",
+        margin: { t: 10, r: 18, b: 92, l: 58 },
+        legend: { orientation: "h", y: 1.12, x: 0 },
+        xaxis: { tickangle: -28 },
+        yaxis: { title: "Action count", gridcolor: COLORS.grid, zeroline: false },
     }, PLOTLY_OPTIONS);
 }
 
@@ -110,11 +184,12 @@ function renderPrototypeList() {
     const container = document.getElementById("prototypeList");
     container.innerHTML = "";
 
-    for (const profile of dashboardData.cluster_profiles || []) {
-        const prototype = (profile.prototype_sequence || []).filter((value) => value !== "END");
+    for (const [index, profile] of (dashboardData.cluster_profiles || []).entries()) {
+        const prototype = cleanPrototype(profile.prototype_sequence);
         const topActions = profile.top_actions || [];
         const card = document.createElement("article");
         card.className = "prototype-card";
+        card.style.setProperty("--cluster-color", getClusterColor(index));
         card.innerHTML = `
             <div class="prototype-card-header">
                 <strong>Cluster ${escapeHtml(profile.cluster)}</strong>
@@ -126,8 +201,14 @@ function renderPrototypeList() {
             </div>
             <p>${escapeHtml(prototype.join(" -> ") || "No prototype actions")}</p>
             <div class="mini-chip-row">${topActions.slice(0, 5).map((action) => `<span>${escapeHtml(action)}</span>`).join("")}</div>
-            <button type="button" class="secondary compact-button" data-prototype="${escapeHtml(prototype.join(", "))}">Use Prototype</button>
         `;
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "secondary compact-button";
+        button.textContent = "Use Prototype";
+        button.dataset.prototype = prototype.join(", ");
+        card.appendChild(button);
         container.appendChild(card);
     }
 
@@ -247,18 +328,22 @@ async function runManualSequenceAssignment() {
     const distances = payload.scores || [];
     const unknown = payload.unknown_tokens || [];
     const unknownLine = unknown.length
-        ? `<br><small class="warning-text">Unknown tokens ignored: ${unknown.map(escapeHtml).join(", ")}</small>`
+        ? `<small class="warning-text">Unknown tokens ignored: ${unknown.map(escapeHtml).join(", ")}</small>`
         : "";
 
     summary.innerHTML = `
-        <strong>Closest match: Cluster ${escapeHtml(best.cluster ?? "--")}</strong>
-        <span>Sequence length entered: ${formatNumber(payload.sequence_length ?? 0)}</span>
-        <span>Position mismatches vs prototype: ${escapeHtml(best.mismatches ?? "--")}</span>
-        <span>Cluster median length: ${Number(best.median_length ?? 0).toFixed(1)}</span>
-        <span>Cluster top actions: ${escapeHtml((best.top_actions || []).join(", "))}</span>
-        <span>Prototype path: ${escapeHtml((best.prototype || []).join(" -> "))}</span>
+        <div class="result-hero">
+            <span>Closest match</span>
+            <strong>Cluster ${escapeHtml(best.cluster ?? "--")}</strong>
+        </div>
+        <div class="result-grid">
+            <span><b>${formatNumber(payload.sequence_length ?? 0)}</b> steps entered</span>
+            <span><b>${escapeHtml(best.mismatches ?? "--")}</b> prototype mismatches</span>
+            <span><b>${Number(best.median_length ?? 0).toFixed(1)}</b> cluster median length</span>
+        </div>
+        <p>${escapeHtml((best.top_actions || []).join(" / "))}</p>
+        <small>${escapeHtml((best.prototype || []).join(" -> "))}</small>
         ${unknownLine}
-        <small>Served by FastAPI on :${API_PORT}</small>
     `;
 
     Plotly.newPlot("manualDistanceChart", [
@@ -273,8 +358,8 @@ async function runManualSequenceAssignment() {
         },
     ], {
         ...BASE_LAYOUT,
-        margin: { t: 16, r: 18, b: 42, l: 50 },
-        yaxis: { title: "Mismatch Count", gridcolor: COLORS.grid, rangemode: "tozero" },
+        margin: { t: 10, r: 18, b: 42, l: 50 },
+        yaxis: { title: "Mismatch Count", gridcolor: COLORS.grid, rangemode: "tozero", zeroline: false },
     }, PLOTLY_OPTIONS);
 }
 
@@ -320,6 +405,14 @@ function setManualSequence(sequence) {
 
 function setStatus(message) {
     document.getElementById("statusMessage").textContent = message;
+}
+
+function cleanPrototype(sequence) {
+    return (sequence || []).filter((value) => value !== "END");
+}
+
+function getClusterColor(index) {
+    return CLUSTER_COLORS[index % CLUSTER_COLORS.length];
 }
 
 function formatNumber(value) {

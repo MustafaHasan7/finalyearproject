@@ -10,37 +10,37 @@
     <script src="vendor/project-shell.js" defer></script>
 </head>
 <body>
-    <div class="page-shell">
-        <header class="hero dashboard-header">
+    <div class="app-shell">
+        <header class="topbar">
             <div class="title-block">
-                <p class="eyebrow">BSIT Final Year Project / Chapter 10</p>
+                <p class="eyebrow">BSIT FYP / Chapter 10</p>
                 <h1>Learning Session Sequence Studio</h1>
                 <p class="hero-copy">Moodle session traces clustered into learning-path patterns with manual sequence assignment.</p>
             </div>
-            <div class="hero-meta" aria-label="Runtime details">
-                <div class="meta-chip">Python backend</div>
-                <div class="meta-chip">Sequence clustering</div>
-                <div class="meta-chip">API :9510</div>
-                <div class="meta-chip" id="generatedAt">Waiting for backend output</div>
+            <div class="runtime-strip" aria-label="Runtime details">
+                <span>Python</span>
+                <span>FastAPI :9510</span>
+                <span>Static UI :8510</span>
+                <span id="generatedAt">Waiting for backend output</span>
             </div>
         </header>
 
         <main>
-            <section class="stats-grid">
+            <section class="stats-grid" aria-label="Project metrics">
                 <article class="stat-card">
-                    <span class="stat-label">Total Sessions</span>
+                    <span class="stat-label">Sessions</span>
                     <p class="stat-value" id="totalSessions">--</p>
                 </article>
-                <article class="stat-card accent-card">
-                    <span class="stat-label">Unique Students</span>
+                <article class="stat-card signal-card">
+                    <span class="stat-label">Students</span>
                     <p class="stat-value" id="uniqueStudents">--</p>
                 </article>
                 <article class="stat-card">
-                    <span class="stat-label">Distinct Actions</span>
+                    <span class="stat-label">Actions</span>
                     <p class="stat-value" id="distinctActions">--</p>
                 </article>
                 <article class="stat-card">
-                    <span class="stat-label">Chosen Clusters</span>
+                    <span class="stat-label">Clusters</span>
                     <p class="stat-value" id="chosenClusters">--</p>
                 </article>
                 <article class="stat-card">
@@ -49,75 +49,91 @@
                 </article>
             </section>
 
-            <section class="panel manual-panel priority-panel">
-                <div class="panel-heading">
-                    <div>
-                        <p class="section-kicker">Interactive assignment</p>
-                        <h2>Manual Sequence Demo</h2>
-                    </div>
-                    <p>Enter a comma-separated Moodle session trace to estimate the closest learned sequence cluster.</p>
-                </div>
-                <div class="manual-layout">
-                    <form id="manualForm" class="input-grid">
-                        <label for="manualSequence">Session trace</label>
-                        <textarea id="manualSequence" rows="7" spellcheck="false"></textarea>
-                        <div class="button-row">
-                            <button type="submit">Assign Cluster</button>
-                            <button type="button" class="secondary" id="resetSequence">Reset Example</button>
-                            <button type="button" class="secondary ghost-button" id="clearSequence">Clear</button>
+            <section class="cluster-ribbon" id="clusterRibbon" aria-label="Cluster overview"></section>
+
+            <section class="workbench">
+                <article class="panel manual-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="section-kicker">Interactive assignment</p>
+                            <h2>Manual Sequence Workbench</h2>
                         </div>
-                        <p class="input-hint">Click catalogue actions or cluster prototypes below to build a trace faster.</p>
-                    </form>
-                    <div class="manual-output">
-                        <div class="result-card" id="manualSummary">Awaiting manual sequence input.</div>
-                        <div class="chart compact-chart" id="manualDistanceChart"></div>
+                        <p>Enter a comma-separated Moodle session trace to estimate the closest learned sequence cluster.</p>
                     </div>
-                </div>
+                    <div class="manual-layout">
+                        <form id="manualForm" class="input-grid">
+                            <label for="manualSequence">Session trace</label>
+                            <textarea id="manualSequence" rows="8" spellcheck="false"></textarea>
+                            <div class="button-row">
+                                <button type="submit">Assign Cluster</button>
+                                <button type="button" class="secondary" id="resetSequence">Reset Example</button>
+                                <button type="button" class="secondary" id="clearSequence">Clear</button>
+                            </div>
+                            <div class="catalogue-dock" id="actionCatalogue"></div>
+                        </form>
+                        <div class="manual-output">
+                            <div class="result-card" id="manualSummary">Awaiting manual sequence input.</div>
+                            <div class="chart compact-chart" id="manualDistanceChart"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <aside class="panel prototype-panel">
+                    <div class="panel-heading stacked-heading">
+                        <div>
+                            <p class="section-kicker">Cluster blueprints</p>
+                            <h2>Prototype Sequences</h2>
+                        </div>
+                        <p>Most typical first steps for each discovered session pattern.</p>
+                    </div>
+                    <div class="prototype-list" id="prototypeList"></div>
+                </aside>
             </section>
 
-            <section class="panel-grid">
+            <section class="analytics-grid">
                 <article class="panel">
                     <div class="panel-heading">
-                        <h2>Cluster Validation</h2>
-                        <p>Silhouette trends for candidate sequence-cluster solutions.</p>
+                        <div>
+                            <p class="section-kicker">Model selection</p>
+                            <h2>Cluster Validation</h2>
+                        </div>
+                        <p>Silhouette trend for candidate sequence-cluster solutions.</p>
                     </div>
                     <div class="chart" id="validationChart"></div>
                 </article>
 
                 <article class="panel">
                     <div class="panel-heading">
-                        <h2>Cluster Sizes</h2>
-                        <p>Session counts in the QMD-aligned four-cluster sequence solution.</p>
+                        <div>
+                            <p class="section-kicker">Distribution</p>
+                            <h2>Cluster Sizes</h2>
+                        </div>
+                        <p>Session counts in the selected four-cluster solution.</p>
                     </div>
                     <div class="chart" id="clusterSizeChart"></div>
                 </article>
 
-                <article class="panel">
+                <article class="panel wide-chart">
                     <div class="panel-heading">
-                        <h2>Prototype Sequences</h2>
-                        <p>Most typical first steps for each session cluster.</p>
+                        <div>
+                            <p class="section-kicker">Action signatures</p>
+                            <h2>Top Actions by Cluster</h2>
+                        </div>
+                        <p>Dominant Moodle actions that characterize each sequence group.</p>
                     </div>
-                    <div class="prototype-list" id="prototypeList"></div>
-                </article>
-
-                <article class="panel">
-                    <div class="panel-heading">
-                        <h2>Action Catalogue</h2>
-                        <p>Use these exact action names when testing a manual sequence.</p>
-                    </div>
-                    <div class="catalogue" id="actionCatalogue"></div>
+                    <div class="chart" id="actionSignatureChart"></div>
                 </article>
             </section>
 
-            <section class="panel wide-panel">
+            <section class="panel table-panel">
                 <div class="panel-heading with-controls">
                     <div>
-                        <h2>Session Samples</h2>
-                        <p>Preview clustered sessions exported by the Python backend.</p>
+                        <p class="section-kicker">Session evidence</p>
+                        <h2>Clustered Session Samples</h2>
                         <p class="sample-count" id="sampleCount">Showing 0 sessions</p>
                     </div>
                     <div class="table-controls">
-                        <input id="sessionSearch" type="search" placeholder="Search by user or session id">
+                        <input id="sessionSearch" type="search" placeholder="Search user or session id">
                         <select id="clusterFilter">
                             <option value="all">All clusters</option>
                         </select>
@@ -139,8 +155,8 @@
                 </div>
             </section>
 
-            <section class="panel status-panel">
-                <h2>Backend Status</h2>
+            <section class="status-line" aria-live="polite">
+                <span>Backend Status</span>
                 <p id="statusMessage">Loading dashboard data...</p>
             </section>
         </main>
