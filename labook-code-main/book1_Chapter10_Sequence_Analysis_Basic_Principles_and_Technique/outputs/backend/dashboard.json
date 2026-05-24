@@ -1,0 +1,2392 @@
+{
+  "project": {
+    "title": "Learning Session Sequence Studio",
+    "generated_at": "2026-05-24 16:38:22",
+    "backend": "Python",
+    "source_chapter": "Chapter 10",
+    "source_qmd": "ch10-seq.qmd",
+    "source_notebook": "ch10-sequence-analysis.ipynb"
+  },
+  "overview": {
+    "total_sessions": 9383,
+    "unique_students": 130,
+    "distinct_actions": 12,
+    "chosen_clusters": 4,
+    "median_sequence_length": 6.0
+  },
+  "action_catalogue": [
+    "Applications",
+    "Assignment",
+    "Course_view",
+    "Ethics",
+    "Feedback",
+    "General",
+    "Group_work",
+    "Instructions",
+    "La_types",
+    "Practicals",
+    "Social",
+    "Theory"
+  ],
+  "validation_metrics": [
+    {
+      "clusters": 2,
+      "silhouette": 0.3603,
+      "inertia": 103535.09
+    },
+    {
+      "clusters": 3,
+      "silhouette": 0.2201,
+      "inertia": 93353.67
+    },
+    {
+      "clusters": 4,
+      "silhouette": 0.1155,
+      "inertia": 91708.69
+    },
+    {
+      "clusters": 5,
+      "silhouette": 0.1417,
+      "inertia": 85644.09
+    },
+    {
+      "clusters": 6,
+      "silhouette": 0.1829,
+      "inertia": 83403.42
+    }
+  ],
+  "cluster_profiles": [
+    {
+      "cluster": 1,
+      "size": 2804,
+      "median_length": 7.0,
+      "mean_length": 7.18,
+      "prototype_sequence": [
+        "Course_view",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work"
+      ],
+      "top_actions": [
+        "Group_work",
+        "Course_view",
+        "Assignment",
+        "Instructions",
+        "Practicals",
+        "Feedback"
+      ]
+    },
+    {
+      "cluster": 2,
+      "size": 1641,
+      "median_length": 24.0,
+      "mean_length": 27.571,
+      "prototype_sequence": [
+        "Course_view",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work"
+      ],
+      "top_actions": [
+        "Group_work",
+        "Course_view",
+        "Instructions",
+        "Practicals",
+        "General",
+        "Assignment"
+      ]
+    },
+    {
+      "cluster": 3,
+      "size": 1395,
+      "median_length": 13.0,
+      "mean_length": 13.895,
+      "prototype_sequence": [
+        "Course_view",
+        "Course_view",
+        "Course_view",
+        "Course_view",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Course_view"
+      ],
+      "top_actions": [
+        "Practicals",
+        "Course_view",
+        "Group_work",
+        "Assignment",
+        "Instructions",
+        "Feedback"
+      ]
+    },
+    {
+      "cluster": 4,
+      "size": 3543,
+      "median_length": 3.0,
+      "mean_length": 3.017,
+      "prototype_sequence": [
+        "Course_view",
+        "Course_view",
+        "Course_view",
+        "Course_view",
+        "Practicals",
+        "END",
+        "END",
+        "END",
+        "END",
+        "END",
+        "END",
+        "END"
+      ],
+      "top_actions": [
+        "Course_view",
+        "Group_work",
+        "Practicals",
+        "Assignment",
+        "Instructions",
+        "Feedback"
+      ]
+    }
+  ],
+  "action_frequency": [
+    {
+      "cluster": 1,
+      "action": "Group_work",
+      "count": 7754
+    },
+    {
+      "cluster": 1,
+      "action": "Course_view",
+      "count": 5882
+    },
+    {
+      "cluster": 1,
+      "action": "Assignment",
+      "count": 1762
+    },
+    {
+      "cluster": 1,
+      "action": "Instructions",
+      "count": 1395
+    },
+    {
+      "cluster": 1,
+      "action": "Practicals",
+      "count": 1182
+    },
+    {
+      "cluster": 1,
+      "action": "Feedback",
+      "count": 673
+    },
+    {
+      "cluster": 2,
+      "action": "Group_work",
+      "count": 19380
+    },
+    {
+      "cluster": 2,
+      "action": "Course_view",
+      "count": 10586
+    },
+    {
+      "cluster": 2,
+      "action": "Instructions",
+      "count": 3108
+    },
+    {
+      "cluster": 2,
+      "action": "Practicals",
+      "count": 2405
+    },
+    {
+      "cluster": 2,
+      "action": "General",
+      "count": 1965
+    },
+    {
+      "cluster": 2,
+      "action": "Assignment",
+      "count": 1897
+    },
+    {
+      "cluster": 3,
+      "action": "Practicals",
+      "count": 4764
+    },
+    {
+      "cluster": 3,
+      "action": "Course_view",
+      "count": 4749
+    },
+    {
+      "cluster": 3,
+      "action": "Group_work",
+      "count": 3229
+    },
+    {
+      "cluster": 3,
+      "action": "Assignment",
+      "count": 2129
+    },
+    {
+      "cluster": 3,
+      "action": "Instructions",
+      "count": 1349
+    },
+    {
+      "cluster": 3,
+      "action": "Feedback",
+      "count": 902
+    },
+    {
+      "cluster": 4,
+      "action": "Course_view",
+      "count": 3841
+    },
+    {
+      "cluster": 4,
+      "action": "Group_work",
+      "count": 2124
+    },
+    {
+      "cluster": 4,
+      "action": "Practicals",
+      "count": 1627
+    },
+    {
+      "cluster": 4,
+      "action": "Assignment",
+      "count": 1545
+    },
+    {
+      "cluster": 4,
+      "action": "Instructions",
+      "count": 592
+    },
+    {
+      "cluster": 4,
+      "action": "Feedback",
+      "count": 346
+    }
+  ],
+  "manual_demo": {
+    "instructions": "Enter a comma-separated action sequence using the catalogue shown below.",
+    "default_sequence": "Applications, Assignment, Course_view, Ethics, Feedback",
+    "max_sequence_length": 49,
+    "prototype_sequences": {
+      "1": [
+        "Course_view",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work"
+      ],
+      "2": [
+        "Course_view",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work",
+        "Group_work"
+      ],
+      "3": [
+        "Course_view",
+        "Course_view",
+        "Course_view",
+        "Course_view",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Practicals",
+        "Course_view"
+      ],
+      "4": [
+        "Course_view",
+        "Course_view",
+        "Course_view",
+        "Course_view",
+        "Practicals",
+        "END",
+        "END",
+        "END",
+        "END",
+        "END",
+        "END",
+        "END"
+      ]
+    }
+  },
+  "sequence_schema": {
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4",
+      "step_5",
+      "step_6",
+      "step_7",
+      "step_8",
+      "step_9",
+      "step_10",
+      "step_11",
+      "step_12",
+      "step_13",
+      "step_14",
+      "step_15",
+      "step_16",
+      "step_17",
+      "step_18",
+      "step_19",
+      "step_20",
+      "step_21",
+      "step_22",
+      "step_23",
+      "step_24",
+      "step_25",
+      "step_26",
+      "step_27",
+      "step_28",
+      "step_29",
+      "step_30",
+      "step_31",
+      "step_32",
+      "step_33",
+      "step_34",
+      "step_35",
+      "step_36",
+      "step_37",
+      "step_38",
+      "step_39",
+      "step_40",
+      "step_41",
+      "step_42",
+      "step_43",
+      "step_44",
+      "step_45",
+      "step_46",
+      "step_47",
+      "step_48",
+      "step_49"
+    ],
+    "encoder": {
+      "categories": [
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Theory"
+        ],
+        [
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "Practicals",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Social",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Assignment",
+          "Course_view",
+          "END",
+          "Ethics",
+          "Feedback",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Theory"
+        ],
+        [
+          "Applications",
+          "Course_view",
+          "END",
+          "Ethics",
+          "General",
+          "Group_work",
+          "Instructions",
+          "La_types",
+          "Practicals",
+          "Theory"
+        ]
+      ]
+    }
+  },
+  "samples": [
+    {
+      "user": "042b07ba1",
+      "session_id": "042b07ba1_Session_21",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Ethics -> Group_work"
+    },
+    {
+      "user": "1115dae61",
+      "session_id": "1115dae61_Session_68",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "247247ac7",
+      "session_id": "247247ac7_Session_17",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_61",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_70",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "33946b26e",
+      "session_id": "33946b26e_Session_70",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "3df19c0ee",
+      "session_id": "3df19c0ee_Session_77",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Instructions"
+    },
+    {
+      "user": "4b1055dba",
+      "session_id": "4b1055dba_Session_21",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Ethics -> Group_work"
+    },
+    {
+      "user": "654da75e0",
+      "session_id": "654da75e0_Session_61",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "654da75e0",
+      "session_id": "654da75e0_Session_70",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "6fccddb82",
+      "session_id": "6fccddb82_Session_68",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "70581f7ef",
+      "session_id": "70581f7ef_Session_68",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "8c70d6efc",
+      "session_id": "8c70d6efc_Session_53",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "9bed223d9",
+      "session_id": "9bed223d9_Session_33",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "9e96fd448",
+      "session_id": "9e96fd448_Session_21",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Ethics -> Group_work"
+    },
+    {
+      "user": "aab7ad69f",
+      "session_id": "aab7ad69f_Session_77",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "ba76ebfab",
+      "session_id": "ba76ebfab_Session_25",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "c049ad090",
+      "session_id": "c049ad090_Session_14",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "dc40ae49d",
+      "session_id": "dc40ae49d_Session_68",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "f98e6e2b8",
+      "session_id": "f98e6e2b8_Session_53",
+      "cluster": 1,
+      "sequence_length": 12,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "042b07ba1",
+      "session_id": "042b07ba1_Session_20",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "081b100cf",
+      "session_id": "081b100cf_Session_46",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Assignment -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "0857b3d8e",
+      "session_id": "0857b3d8e_Session_25",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Social -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "0857b3d8e",
+      "session_id": "0857b3d8e_Session_53",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "176bb0f33",
+      "session_id": "176bb0f33_Session_15",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Instructions -> Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "176bb0f33",
+      "session_id": "176bb0f33_Session_36",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "1813081bd",
+      "session_id": "1813081bd_Session_15",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Instructions -> Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "1813081bd",
+      "session_id": "1813081bd_Session_36",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "1eee1b944",
+      "session_id": "1eee1b944_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "278a75edf",
+      "session_id": "278a75edf_Session_55",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> La_types"
+    },
+    {
+      "user": "278a75edf",
+      "session_id": "278a75edf_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_43",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Instructions -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_48",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_50",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Instructions -> Instructions -> Group_work -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_56",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_66",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_7",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Instructions -> Course_view -> Instructions -> Group_work -> Instructions -> Instructions -> General -> Instructions -> La_types -> Group_work"
+    },
+    {
+      "user": "310c79a41",
+      "session_id": "310c79a41_Session_46",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "31eedd54c",
+      "session_id": "31eedd54c_Session_118",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "31eedd54c",
+      "session_id": "31eedd54c_Session_42",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> General -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "33946b26e",
+      "session_id": "33946b26e_Session_43",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Instructions -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "33946b26e",
+      "session_id": "33946b26e_Session_48",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "33946b26e",
+      "session_id": "33946b26e_Session_50",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Practicals -> Group_work -> Group_work -> Group_work -> Instructions -> Instructions -> Group_work -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "33946b26e",
+      "session_id": "33946b26e_Session_56",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "33946b26e",
+      "session_id": "33946b26e_Session_66",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view"
+    },
+    {
+      "user": "3924dd271",
+      "session_id": "3924dd271_Session_104",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Theory -> Course_view -> Theory -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "3924dd271",
+      "session_id": "3924dd271_Session_108",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "3924dd271",
+      "session_id": "3924dd271_Session_121",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "3924dd271",
+      "session_id": "3924dd271_Session_28",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Course_view -> Group_work"
+    },
+    {
+      "user": "3924dd271",
+      "session_id": "3924dd271_Session_65",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work"
+    },
+    {
+      "user": "3924dd271",
+      "session_id": "3924dd271_Session_73",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Instructions -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Instructions -> Assignment -> Assignment"
+    },
+    {
+      "user": "417892918",
+      "session_id": "417892918_Session_31",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "417892918",
+      "session_id": "417892918_Session_62",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "417892918",
+      "session_id": "417892918_Session_88",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Group_work"
+    },
+    {
+      "user": "475586bc0",
+      "session_id": "475586bc0_Session_104",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Theory -> Course_view -> Theory -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "475586bc0",
+      "session_id": "475586bc0_Session_108",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "475586bc0",
+      "session_id": "475586bc0_Session_121",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "475586bc0",
+      "session_id": "475586bc0_Session_28",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "475586bc0",
+      "session_id": "475586bc0_Session_65",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work"
+    },
+    {
+      "user": "475586bc0",
+      "session_id": "475586bc0_Session_73",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Instructions -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Instructions -> Assignment -> Assignment"
+    },
+    {
+      "user": "488b6e908",
+      "session_id": "488b6e908_Session_26",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "488b6e908",
+      "session_id": "488b6e908_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view"
+    },
+    {
+      "user": "4b1055dba",
+      "session_id": "4b1055dba_Session_20",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "53d6ab60c",
+      "session_id": "53d6ab60c_Session_15",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Instructions -> Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "53d6ab60c",
+      "session_id": "53d6ab60c_Session_36",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "57b5ca965",
+      "session_id": "57b5ca965_Session_46",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "654da75e0",
+      "session_id": "654da75e0_Session_43",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Instructions -> Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "654da75e0",
+      "session_id": "654da75e0_Session_48",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "654da75e0",
+      "session_id": "654da75e0_Session_50",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Instructions -> Instructions -> Group_work -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "654da75e0",
+      "session_id": "654da75e0_Session_56",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "654da75e0",
+      "session_id": "654da75e0_Session_66",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work"
+    },
+    {
+      "user": "68a377c82",
+      "session_id": "68a377c82_Session_20",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Theory -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view"
+    },
+    {
+      "user": "68a377c82",
+      "session_id": "68a377c82_Session_4",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "72a9ecbd7",
+      "session_id": "72a9ecbd7_Session_55",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> La_types"
+    },
+    {
+      "user": "72a9ecbd7",
+      "session_id": "72a9ecbd7_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "77b6d3f57",
+      "session_id": "77b6d3f57_Session_20",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Theory -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view"
+    },
+    {
+      "user": "77b6d3f57",
+      "session_id": "77b6d3f57_Session_4",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "78a890306",
+      "session_id": "78a890306_Session_45",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Course_view"
+    },
+    {
+      "user": "78a890306",
+      "session_id": "78a890306_Session_51",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "7a17472ef",
+      "session_id": "7a17472ef_Session_71",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "7a17472ef",
+      "session_id": "7a17472ef_Session_83",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Course_view"
+    },
+    {
+      "user": "7e2726f3c",
+      "session_id": "7e2726f3c_Session_31",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "7e2726f3c",
+      "session_id": "7e2726f3c_Session_62",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "7e2726f3c",
+      "session_id": "7e2726f3c_Session_88",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "82ed5d2d3",
+      "session_id": "82ed5d2d3_Session_31",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "82ed5d2d3",
+      "session_id": "82ed5d2d3_Session_62",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "82ed5d2d3",
+      "session_id": "82ed5d2d3_Session_88",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work"
+    },
+    {
+      "user": "8c70d6efc",
+      "session_id": "8c70d6efc_Session_12",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "8e21dc99c",
+      "session_id": "8e21dc99c_Session_31",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "8e21dc99c",
+      "session_id": "8e21dc99c_Session_62",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Course_view -> Course_view -> Group_work -> Group_work"
+    },
+    {
+      "user": "8e21dc99c",
+      "session_id": "8e21dc99c_Session_88",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "91489f7a9",
+      "session_id": "91489f7a9_Session_20",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Theory -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view"
+    },
+    {
+      "user": "91489f7a9",
+      "session_id": "91489f7a9_Session_4",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "91fc5722e",
+      "session_id": "91fc5722e_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "93d1f2e82",
+      "session_id": "93d1f2e82_Session_20",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Theory -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view"
+    },
+    {
+      "user": "93d1f2e82",
+      "session_id": "93d1f2e82_Session_4",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "9e96fd448",
+      "session_id": "9e96fd448_Session_20",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "a0df056a9",
+      "session_id": "a0df056a9_Session_55",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> La_types"
+    },
+    {
+      "user": "a0df056a9",
+      "session_id": "a0df056a9_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "a1639fc4e",
+      "session_id": "a1639fc4e_Session_118",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "a1639fc4e",
+      "session_id": "a1639fc4e_Session_42",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Course_view -> General -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "a48165ad5",
+      "session_id": "a48165ad5_Session_21",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Theory -> Ethics -> Course_view -> Group_work -> Group_work -> Group_work -> Ethics -> Ethics -> Ethics -> Ethics"
+    },
+    {
+      "user": "a48165ad5",
+      "session_id": "a48165ad5_Session_56",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "a9554144c",
+      "session_id": "a9554144c_Session_71",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "a9554144c",
+      "session_id": "a9554144c_Session_83",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Course_view"
+    },
+    {
+      "user": "aec21eaac",
+      "session_id": "aec21eaac_Session_53",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "b4ba8bbd5",
+      "session_id": "b4ba8bbd5_Session_110",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work"
+    },
+    {
+      "user": "b4ba8bbd5",
+      "session_id": "b4ba8bbd5_Session_47",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "b6bad81ae",
+      "session_id": "b6bad81ae_Session_15",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Instructions -> Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "b6bad81ae",
+      "session_id": "b6bad81ae_Session_36",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "b8907d293",
+      "session_id": "b8907d293_Session_45",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Course_view"
+    },
+    {
+      "user": "b8907d293",
+      "session_id": "b8907d293_Session_51",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "b93ed23a0",
+      "session_id": "b93ed23a0_Session_15",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Social -> Group_work -> Social -> Social -> General -> Group_work -> La_types -> La_types -> La_types"
+    },
+    {
+      "user": "ba76ebfab",
+      "session_id": "ba76ebfab_Session_118",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "ba76ebfab",
+      "session_id": "ba76ebfab_Session_42",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Course_view -> General -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "bf46a6f13",
+      "session_id": "bf46a6f13_Session_22",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "bf46a6f13",
+      "session_id": "bf46a6f13_Session_4",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Instructions -> Instructions -> Group_work -> Group_work -> Course_view -> Group_work -> Course_view -> Course_view"
+    },
+    {
+      "user": "c9608e10c",
+      "session_id": "c9608e10c_Session_45",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Course_view"
+    },
+    {
+      "user": "c9608e10c",
+      "session_id": "c9608e10c_Session_51",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "d19a40ad6",
+      "session_id": "d19a40ad6_Session_22",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Course_view -> Course_view"
+    },
+    {
+      "user": "dc1de84bd",
+      "session_id": "dc1de84bd_Session_110",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "dc1de84bd",
+      "session_id": "dc1de84bd_Session_47",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "e06debeb8",
+      "session_id": "e06debeb8_Session_26",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "e06debeb8",
+      "session_id": "e06debeb8_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view"
+    },
+    {
+      "user": "e4f7cca85",
+      "session_id": "e4f7cca85_Session_104",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Theory -> Course_view -> Theory -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "e4f7cca85",
+      "session_id": "e4f7cca85_Session_108",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "e4f7cca85",
+      "session_id": "e4f7cca85_Session_121",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "e4f7cca85",
+      "session_id": "e4f7cca85_Session_28",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Course_view -> Group_work"
+    },
+    {
+      "user": "e4f7cca85",
+      "session_id": "e4f7cca85_Session_65",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work"
+    },
+    {
+      "user": "e4f7cca85",
+      "session_id": "e4f7cca85_Session_73",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Instructions -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Instructions -> Assignment -> Assignment"
+    },
+    {
+      "user": "e7d532916",
+      "session_id": "e7d532916_Session_21",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Theory -> Ethics -> Course_view -> Group_work -> Course_view -> Group_work -> Ethics -> Ethics -> Ethics -> Ethics"
+    },
+    {
+      "user": "e7d532916",
+      "session_id": "e7d532916_Session_56",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "e7d532916",
+      "session_id": "e7d532916_Session_70",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Feedback -> Feedback -> Group_work -> Course_view"
+    },
+    {
+      "user": "ebd217fd4",
+      "session_id": "ebd217fd4_Session_15",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Social -> Group_work -> Social -> Social -> General -> Group_work -> La_types -> La_types -> La_types"
+    },
+    {
+      "user": "efe124d2f",
+      "session_id": "efe124d2f_Session_26",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "efe124d2f",
+      "session_id": "efe124d2f_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view"
+    },
+    {
+      "user": "f753ce9bf",
+      "session_id": "f753ce9bf_Session_26",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "f753ce9bf",
+      "session_id": "f753ce9bf_Session_63",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view"
+    },
+    {
+      "user": "f98e6e2b8",
+      "session_id": "f98e6e2b8_Session_12",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "f98e6e2b8",
+      "session_id": "f98e6e2b8_Session_6",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Instructions -> Group_work -> Course_view -> Social -> Social -> Social -> Social -> Social -> Social"
+    },
+    {
+      "user": "fc95def14",
+      "session_id": "fc95def14_Session_110",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work"
+    },
+    {
+      "user": "fc95def14",
+      "session_id": "fc95def14_Session_47",
+      "cluster": 1,
+      "sequence_length": 11,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "042b07ba1",
+      "session_id": "042b07ba1_Session_22",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Ethics"
+    },
+    {
+      "user": "0604ff3d3",
+      "session_id": "0604ff3d3_Session_21",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "077584d71",
+      "session_id": "077584d71_Session_81",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Feedback -> Assignment -> Assignment -> Course_view -> Course_view -> Instructions -> Assignment -> Instructions -> Feedback -> Feedback"
+    },
+    {
+      "user": "081b100cf",
+      "session_id": "081b100cf_Session_60",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment"
+    },
+    {
+      "user": "0857b3d8e",
+      "session_id": "0857b3d8e_Session_2",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Course_view -> Instructions -> Instructions -> Instructions -> General -> General -> Course_view -> General -> Course_view"
+    },
+    {
+      "user": "0857b3d8e",
+      "session_id": "0857b3d8e_Session_95",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Practicals -> Course_view -> Course_view -> Course_view -> Group_work -> Instructions -> Course_view -> Course_view -> Practicals -> Course_view"
+    },
+    {
+      "user": "0af619e4b",
+      "session_id": "0af619e4b_Session_13",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "0af619e4b",
+      "session_id": "0af619e4b_Session_14",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "0ec99ce96",
+      "session_id": "0ec99ce96_Session_14",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Practicals -> Practicals -> Course_view -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "1115dae61",
+      "session_id": "1115dae61_Session_2",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Instructions -> Instructions -> Instructions -> Group_work -> Group_work -> General -> Group_work -> General -> General"
+    },
+    {
+      "user": "1115dae61",
+      "session_id": "1115dae61_Session_36",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Practicals -> Feedback -> Feedback -> Feedback -> Feedback -> Feedback -> Feedback -> Feedback -> Feedback -> Group_work"
+    },
+    {
+      "user": "1115dae61",
+      "session_id": "1115dae61_Session_37",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "1115dae61",
+      "session_id": "1115dae61_Session_42",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "1115dae61",
+      "session_id": "1115dae61_Session_53",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Assignment -> Course_view -> Course_view"
+    },
+    {
+      "user": "1115dae61",
+      "session_id": "1115dae61_Session_6",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Instructions -> General -> Instructions -> Instructions -> General -> General -> Instructions -> General -> Course_view"
+    },
+    {
+      "user": "1115dae61",
+      "session_id": "1115dae61_Session_91",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Course_view -> Course_view -> Course_view -> Course_view -> Course_view -> Course_view -> Course_view -> Course_view -> Course_view"
+    },
+    {
+      "user": "111ad4bea",
+      "session_id": "111ad4bea_Session_30",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Instructions -> Course_view -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Social -> Course_view"
+    },
+    {
+      "user": "111ad4bea",
+      "session_id": "111ad4bea_Session_8",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Course_view -> Social -> Social -> Instructions -> Group_work -> Course_view -> Group_work -> Course_view -> Instructions"
+    },
+    {
+      "user": "121b44bef",
+      "session_id": "121b44bef_Session_23",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "121b44bef",
+      "session_id": "121b44bef_Session_27",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Feedback -> Feedback -> Feedback -> Course_view -> Feedback -> Feedback -> Feedback -> Group_work -> Group_work"
+    },
+    {
+      "user": "121b44bef",
+      "session_id": "121b44bef_Session_7",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "13107114f",
+      "session_id": "13107114f_Session_37",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Instructions -> Instructions -> Feedback -> Feedback -> Instructions -> Course_view -> Course_view -> Assignment -> Assignment"
+    },
+    {
+      "user": "17d06c355",
+      "session_id": "17d06c355_Session_14",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Practicals -> Practicals -> Course_view -> Course_view -> Group_work -> Group_work -> Course_view -> Course_view -> Course_view -> Group_work"
+    },
+    {
+      "user": "1be68632e",
+      "session_id": "1be68632e_Session_42",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Feedback -> Feedback -> Feedback -> Feedback -> Feedback -> Feedback -> Feedback -> Feedback -> Course_view -> Course_view"
+    },
+    {
+      "user": "1dddd964c",
+      "session_id": "1dddd964c_Session_25",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Practicals -> Practicals -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "1dddd964c",
+      "session_id": "1dddd964c_Session_26",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Group_work -> Group_work -> Group_work -> General -> General -> General -> General -> General -> General"
+    },
+    {
+      "user": "1dddd964c",
+      "session_id": "1dddd964c_Session_36",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Group_work -> Course_view -> Instructions -> Instructions -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "1dddd964c",
+      "session_id": "1dddd964c_Session_51",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Course_view -> Group_work -> Group_work -> Instructions -> Group_work -> Group_work -> Course_view"
+    },
+    {
+      "user": "1dddd964c",
+      "session_id": "1dddd964c_Session_8",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "1eee1b944",
+      "session_id": "1eee1b944_Session_30",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "1eee1b944",
+      "session_id": "1eee1b944_Session_80",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Course_view -> Assignment -> Assignment"
+    },
+    {
+      "user": "247247ac7",
+      "session_id": "247247ac7_Session_22",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Assignment -> Assignment"
+    },
+    {
+      "user": "278a75edf",
+      "session_id": "278a75edf_Session_12",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Social -> Social -> Course_view -> Course_view -> Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Group_work"
+    },
+    {
+      "user": "278a75edf",
+      "session_id": "278a75edf_Session_3",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Group_work -> Instructions -> Instructions -> Course_view -> Group_work -> Instructions -> Course_view -> Course_view -> La_types"
+    },
+    {
+      "user": "278a75edf",
+      "session_id": "278a75edf_Session_49",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Group_work -> Course_view -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Course_view -> Group_work"
+    },
+    {
+      "user": "278a75edf",
+      "session_id": "278a75edf_Session_94",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Course_view"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_110",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Assignment -> Course_view -> Assignment -> Assignment"
+    },
+    {
+      "user": "29049945c",
+      "session_id": "29049945c_Session_52",
+      "cluster": 1,
+      "sequence_length": 10,
+      "preview_sequence": "Course_view -> Group_work -> Course_view -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work -> Group_work"
+    }
+  ]
+}
